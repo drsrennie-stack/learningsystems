@@ -77,7 +77,7 @@ p{margin:0 0 12px;max-width:68ch}
 .hero .who{font-weight:700;color:var(--muted);margin:0 0 6px;font-size:15px}
 
 /* Navy band */
-.band{background:var(--navy);color:var(--on-navy);border-radius:6px;padding:32px 28px}
+.band{background:#060B1A;color:var(--on-navy);border-radius:6px;padding:32px 28px}
 .band .eyebrow{color:var(--gold-on-navy)}
 .band h2{color:#fff}
 .band-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-top:18px}
@@ -258,47 +258,50 @@ var R = {
   tbl:{t:"Michaelsen, L. K., and Sweet, M. (2008). The essential elements of team-based learning.",s:"New Directions for Teaching and Learning, 116, 7-27."},
   haidet:{t:"Haidet, P., Levine, R. E., Parmelee, D. X., et al. (2012). Guidelines for reporting team-based learning activities in the medical and health sciences education literature.",s:"Academic Medicine, 87(3), 292-299."},
   ubd:{t:"Wiggins, G., and McTighe, J. (2005). Understanding by Design (expanded 2nd ed.).",s:"ASCD."},
+  chi:{t:"Chi, M. T. H., De Leeuw, N., Chiu, M.-H., and LaVancher, C. (1994). Eliciting self-explanations improves understanding.",s:"Cognitive Science, 18(3), 439-477."},
+  fiorella:{t:"Fiorella, L., and Mayer, R. E. (2013). The relative benefits of learning by teaching and teaching expectancy.",s:"Contemporary Educational Psychology, 38(4), 281-288."},
   peer:{t:"Topping, K. J. (2005). Trends in peer learning.",s:"Educational Psychology, 25(6), 631-645."}
 };
 
 var P = [
 {
-  id:"abg", n:"01", tag:"Clinical reasoning", title:"ABG Interpretation Trainer",
-  eyebrow:"Clinical reasoning · Respiratory physiology",
-  lede:"A leveled trainer that teaches the reasoning behind arterial blood gas interpretation.",
-  blurb:"Six levels of arterial blood gas cases with step-by-step reasoning support that is gradually withdrawn as learners progress.",
-  meta:[["For","Physiology and health science students learning acid-base interpretation"],["Setting","Runs in the browser and embeds in Canvas"],["Cases","Generated from the Henderson-Hasselbalch equation, providing an unlimited set of practice cases"]],
+  id:"chalkcast", n:"01", tag:"Explaining reasoning", title:"chalkcast Whiteboard Studio",
+  eyebrow:"Explaining reasoning · Teach-back assignments",
+  lede:"A whiteboard recording studio where students solve a problem on camera and explain their reasoning out loud.",
+  blurb:"Students work an instructor's problem on a whiteboard while explaining it on camera, then turn in a video and a PDF of their board.",
+  meta:[["For","Instructors who grade how students explain an answer, and their students"],["Setting","Runs in the browser. Nothing to install and no student accounts."],["Data","Recordings stay on the student's device until the student uploads them to the course."],["App",'<a href="https://drsrennie-stack.github.io/student-teaching-studio/teaching-studio.html?demo" target="_blank" rel="noopener">Try the demo<span class="sr-only"> (opens in a new tab)</span></a>']],
   glance:[
-    ["The learning problem","Students can list the steps of blood gas interpretation but struggle to apply them to real values. Scoring only the final classification hides where the reasoning broke down."],
-    ["The design","Six levels, one seven-step sequence for every case, error-specific feedback, and support that is withdrawn as the learner improves."],
-    ["What changes for the learner","Learners work toward interpreting a full case independently. A level is complete after three consecutive cases answered correctly on the first attempt."]
+    ["The learning problem","AI can now produce a correct written answer for almost any course question. A written answer no longer shows whether the student understands the reasoning behind it."],
+    ["The design","The instructor sets a problem and a rubric. The student solves the problem on a whiteboard while explaining each step out loud on camera, and turns in the video with a PDF of the board."],
+    ["What changes for learners","Students have to put the reasoning into their own words, and instructors can grade the explanation instead of only the final answer."]
   ],
+  stepsTitle:"What students do",
   steps:[
-    ["Select a starting level","Six levels, from uncompensated respiratory disorders to a mixed mastery set, in Guided or On my own mode."],
-    ["Review the values","pH, PaCO₂, HCO₃⁻, base excess and PaO₂, as on a blood gas report."],
-    ["Work through each step","The same sequence every time, from pH through compensation and oxygenation."],
-    ["Classify each value","Each value goes in an Acidic, Normal or Alkaline column. The one that matches pH is the primary disorder."],
-    ["Receive targeted feedback","A first error gets a specific explanation. A second shows the answer and rationale."],
-    ["Meet the mastery criterion","Three consecutive correct cases complete a level. A hint resets the count."]
+    ["Open the link","The assignment link opens the studio. There is nothing to install and no account to make."],
+    ["Turn on the camera and microphone","The browser asks for permission only when the student presses the button."],
+    ["Solve the problem out loud","The instructor's problem stays locked at the top of the board, and the rubric sits beside it so the student can check off each item."],
+    ["Finish and download","The student downloads a video and a PDF of the whiteboard."],
+    ["Turn in both files","The student uploads both files to the course assignment, where the video can be captioned."]
   ],
   shots:[
-    ["abg-01.jpg","The level map states the mastery criterion and offers Guided and On my own modes.","Level selection screen with six level cards, two marked Completed and one Recommended, above a choice between Guided and On my own modes.","Sample data"],
-    ["abg-02.jpg","Step 2 of 7. The hint explains the relationship between PaCO₂ and pH as the learner classifies each value.","A case showing pH 7.32, PaCO2 60, HCO3 30, with the question asking whether PaCO2 is acidic, normal, or alkaline, a tip, and a tic-tac-toe grid.","Generated case"],
-    ["abg-04.jpg","Feedback on an incorrect answer explains that the low HCO₃⁻ reflects compensation because the pH is on the alkaline side of 7.40.","The primary disorder question with Metabolic acidosis selected and a Not yet explanation below it.","Generated case"],
-    ["abg-03.jpg","The primary-disorder decision on a fully compensated case, with every value already placed on the grid.","Step 5 of 7 asking for the primary disorder, with four disorder buttons and a completed grid.","Generated case"],
-    ["abg-06.jpg","On my own mode removes step-by-step support and provides brief feedback for each section.","Independent mode showing primary disorder and compensation questions answered, with brief Not yet and Correct feedback.","Generated case"]
+    ["chalk-01.jpg","The student draws and explains while recording. The problem stays at the top of the board and the rubric sits beside it.","Recording screen with a flow diagram from right atrium to aorta, a camera bubble, a running timer and a rubric with two of three items checked.","Sample data"],
+    ["chalk-02.jpg","The instructor writes the problem, the rubric and the time limit.","Instructor setup form for an assignment named Week 6: Heart with a problem, three rubric items and a 5 minute time limit.","Sample data"],
+    ["chalk-03.jpg","A question bank for BIO 004 fills in a problem and a starter rubric by unit and competency.","Question bank panel filtered to Week 7 Cardiovascular with Multiple choice, then teach it and Draw to know it options.","Sample data"],
+    ["chalk-04.jpg","Ready-made instructions to paste into the course, with time-and-a-half and double-time links for students with that accommodation.","Generated assignment instructions with Copy link, Copy instructions, and extended time link buttons.","Sample data"],
+    ["chalk-05.jpg","The last step reminds the student to upload both files.","Final screen titled Turn it in, listing the downloaded video and whiteboard PDF.","Sample data"],
+    ["chalk-06.jpg","An assignment defense asks the student to explain a choice in work they already turned in.","Recording screen showing a defense question about why the left ventricle has the thickest wall.","Sample data"]
   ],
   arch:[
-    ["Explicit expert process","One consistent sequence makes a clinician's reasoning visible and repeatable."],
-    ["Scaffolding and fading","Tips are automatic on Levels 1 and 2, on request from Level 3, and removed in On my own mode."],
-    ["Explanatory feedback","Feedback cites the case values and addresses common errors, such as mistaking compensation for the primary disorder."],
-    ["Progressive difficulty and interleaving","Each level adds a harder case type and mixes in earlier ones, so learners must tell similar patterns apart."],
-    ["Mastery criterion","Advancement requires consistent accuracy across three consecutive cases."]
+    ["Explaining, not just answering","Each assignment asks the student to say why each step is true, so the reasoning is visible and can be graded."],
+    ["The rubric in view","Rubric items sit beside the board while the student records, and the checklist comes back to the instructor in the PDF."],
+    ["Assignment defense","A short follow-up recording asks the student to explain a specific part of their own submitted work."],
+    ["Built-in accommodations","Every assignment comes with time-and-a-half and double-time links."],
+    ["Student privacy","There are no accounts and no server. Work is saved in the student's own browser so a closed tab does not lose it, and it is erased once the student finishes."]
   ],
-  tech:"The trainer generates cases in the browser, runs each one through a single classifier to produce the answer key, and filters out values that are not physiologically plausible. Progress is stored only in the learner's browser, and no personal data is collected.",
-  details:["Each new case's values are announced to screen readers.","Right and wrong are shown with words and border style, not color alone.","A Pause motion button and reduced-motion support.","A normal-ranges reference, with body temperature given as 37 °C (98.6 °F)."],
-  research:["fading","feedback","deliberate"],
-  role:["Learning architecture","Instructional design","Clinical content","Product concept","Prototyping and development"]
+  tech:"chalkcast is a single web page. The whiteboard, the problem and the camera image are recorded together in the browser into one video. Assignment settings are compressed into the link the instructor shares, so no database is needed.",
+  details:["A skip link and full keyboard access to every button, menu and field.","Typed text can be placed on the board from the keyboard.","Recording status is shown in words as well as color.","Status messages are announced to screen readers.","Motion turns off when the device asks for reduced motion."],
+  research:["chi","fiorella","retrieval"],
+  role:["Learning architecture","Product concept","Instructional design","Prototyping and development"]
 },
 {
   id:"tbl", n:"02", tag:"Faculty design tool", title:"TBL Session Creator",
@@ -380,47 +383,7 @@ var P = [
   role:["Learning architecture","Instructional design","Anatomy content","Product concept","Prototyping and development"]
 },
 {
-  id:"cvrn", n:"04", tag:"Professional certification", title:"CVRN Review + ECG Lab",
-  eyebrow:"Professional certification · Cardiovascular nursing",
-  lede:"Certification preparation organized around the exam blueprint and each nurse's identified knowledge gaps.",
-  blurb:"Certification preparation for practicing cardiovascular nurses, organized around the exam blueprint and identified knowledge gaps.",
-  meta:[["For","Practicing nurses preparing for the ABCM CVRN-BC exam, Level I or II"],["Scope","14 blueprint domains and 78 competencies"],["Data","Progress is stored only in the learner's browser."]],
-  glance:[
-    ["The learning problem","Practicing nurses have limited study time and a broad exam blueprint. Reviewing all content equally is inefficient, and a single practice score does not show which domains need attention."],
-    ["The design","A single environment that plans study time against the exam date, identifies gaps through separate written and ECG practical assessments, prioritizes study by blueprint weight, and provides practice exams from a separate item pool."],
-    ["What changes for the learner","Study time is directed to the domains with the most exam points at risk, and a gap is confirmed only when it appears on two assessments."]
-  ],
-  steps:[
-    ["Plan study time","The planner compares available hours with required hours and produces a weekly study plan."],
-    ["Identify written gaps","Two 45-item forms. Each answer is marked Sure or Not sure, and confident incorrect answers are flagged as misconceptions."],
-    ["Identify practical gaps","ECG lab forms assess rhythm identification, measurement, localization and clinical decisions."],
-    ["Study priority competencies","The Right now view lists the highest-priority competencies. Higher-level questions become available once foundational items are mastered."],
-    ["Monitor progress","The dashboard shows readiness by domain, exam points at risk, mastery status and progress over time."],
-    ["Take practice exams","Practice exams draw from an item pool kept separate from study items, so scores reflect performance on unseen questions."]
-  ],
-  shots:[
-    ["cvrn-01.jpg","The planner compares available and required study hours and produces a weekly plan.","Plan screen showing 68 days to exam, 72 hours available, 76 competencies, a Tight but workable verdict and a weekly schedule table.","Sample data"],
-    ["cvrn-02.jpg","Readiness by blueprint domain, with shading that indicates the amount of evidence behind each estimate.","Horizontal bar chart of readiness across fourteen domains beside a mastery mix bar and a readiness trend line.","Sample data"],
-    ["cvrn-07.jpg","A confident incorrect answer is flagged as a misconception, followed by the rationale.","Written gap finder item about the apical impulse with a selected answer and feedback reading Confident and incorrect, flagged as a misconception.","Sample data"],
-    ["cvrn-08.jpg","A gap is confirmed only when a domain is weak on two assessments.","Table comparing last run and this run by domain, with verdicts such as holding across runs, fragile and confirmed gap.","Sample data"],
-    ["cvrn-06.jpg","The Right now view identifies the next competency to study and the criterion for advancing.","Right now panel listing two misconception competencies with objectives and Study this buttons.","Sample data"],
-    ["cvrn-11.jpg","Written and practical results are reported separately.","Run history table and a note that practical results trail written results by 17 points.","Sample data"]
-  ],
-  arch:[
-    ["Confidence-weighted diagnosis","Each answer requires a confidence judgment, and confident errors receive the highest priority."],
-    ["Blueprint-weighted priority","Study priority reflects each domain's weight on the exam, current performance, and time since last practice."],
-    ["Spaced review","Each competency is scheduled for review in 1, 3 or 7 days, depending on performance."],
-    ["Progressive difficulty","Analysis-level questions become available after 70 percent accuracy on foundational items."],
-    ["Valid measurement","Separate item pools for diagnosis, study, practical skills and practice exams, with gaps confirmed across two assessments."]
-  ],
-  archNote:"ECG tracings are not shown on this page while the rhythm library completes clinical review.",
-  tech:"The application runs entirely in the browser. ECG waveforms are generated in the browser, and progress is stored on the learner's device.",
-  details:["Charts have a Show as table alternative.","Caliper readouts and results are announced to screen readers.","ECG lab modules are sequenced from waveform identification to clinical decision-making.","Light and dark themes, and reduced-motion support."],
-  research:["hyper","spacing","dunlosky"],
-  role:["Learning architecture","Instructional design","Clinical content expertise","Product concept","Prototyping and development"]
-},
-{
-  id:"mastery", n:"05", tag:"Metacognition", title:"Anatomy Mastery OS", flagship:true,
+  id:"mastery", n:"04", tag:"Metacognition", title:"Anatomy Mastery OS", flagship:true,
   eyebrow:"Metacognition · Competency-based learning",
   lede:"A competency-driven system that shows students where their confidence and their performance disagree.",
   blurb:"A competency-driven learning system that reveals where confidence and performance disagree, directs targeted repair, and requires learners to prove the gap has closed.",
@@ -466,7 +429,7 @@ var P = [
   role:["Learning architecture","Instructional design","Anatomy content","Product concept","Prototyping and development","Evaluation design"]
 },
 {
-  id:"studywithme", n:"06", tag:"Learning community", title:"Study With Me + AI Project Lab",
+  id:"studywithme", n:"05", tag:"Learning community", title:"Study With Me + AI Project Lab",
   eyebrow:"Learning community · Human anatomy",
   lede:"A structured learning community that supports students alongside independent study tools.",
   blurb:"A shared calendar of faculty, tutor and student study sessions, Scholar Points for participation, and a team project lab with structured AI use.",
@@ -505,7 +468,7 @@ var P = [
 }
 ];
 
-var SCREEN={"abg-01.jpg": "Level map", "abg-02.jpg": "Guided step", "abg-04.jpg": "Feedback", "abg-03.jpg": "Decision point", "abg-06.jpg": "On my own mode", "tbl-01.jpg": "Competency picker", "tbl-02.jpg": "Readiness assurance", "tbl-03.jpg": "Application design", "tbl-05.jpg": "4S check in the prompt", "tbl-04.jpg": "Finished prompt", "loops-03.jpg": "Confidence feedback", "loops-02.jpg": "Per-blank feedback", "loops-05.jpg": "My progress", "loops-06.jpg": "Flagged items", "loops-04.jpg": "Loop hub", "cvrn-01.jpg": "Exam-date plan", "cvrn-02.jpg": "Weakness Dashboard", "cvrn-07.jpg": "Written gap finder", "cvrn-08.jpg": "Run comparison", "cvrn-06.jpg": "Right now", "cvrn-11.jpg": "Written vs practical", "mastery-02.jpg": "Exam engine", "mastery-03.jpg": "Weakness Dashboard", "mastery-05.jpg": "Calibration", "mastery-04.jpg": "Strength by DOK", "mastery-01.jpg": "Today", "mastery-06.jpg": "Practice picker", "swm-01.jpg": "Weekly calendar", "swm-04.jpg": "Host guide", "swm-03.jpg": "My hours", "swm-05.jpg": "Strategy session"};
+var SCREEN={"chalk-01.jpg": "Recording", "chalk-02.jpg": "Instructor setup", "chalk-03.jpg": "Question bank", "chalk-04.jpg": "Instructions and links", "chalk-05.jpg": "Turn it in", "chalk-06.jpg": "Assignment defense", "abg-01.jpg": "Level map", "abg-02.jpg": "Guided step", "abg-04.jpg": "Feedback", "abg-03.jpg": "Decision point", "abg-06.jpg": "On my own mode", "tbl-01.jpg": "Competency picker", "tbl-02.jpg": "Readiness assurance", "tbl-03.jpg": "Application design", "tbl-05.jpg": "4S check in the prompt", "tbl-04.jpg": "Finished prompt", "loops-03.jpg": "Confidence feedback", "loops-02.jpg": "Per-blank feedback", "loops-05.jpg": "My progress", "loops-06.jpg": "Flagged items", "loops-04.jpg": "Loop hub", "cvrn-01.jpg": "Exam-date plan", "cvrn-02.jpg": "Weakness Dashboard", "cvrn-07.jpg": "Written gap finder", "cvrn-08.jpg": "Run comparison", "cvrn-06.jpg": "Right now", "cvrn-11.jpg": "Written vs practical", "mastery-02.jpg": "Exam engine", "mastery-03.jpg": "Weakness Dashboard", "mastery-05.jpg": "Calibration", "mastery-04.jpg": "Strength by DOK", "mastery-01.jpg": "Today", "mastery-06.jpg": "Practice picker", "swm-01.jpg": "Weekly calendar", "swm-04.jpg": "Host guide", "swm-03.jpg": "My hours", "swm-05.jpg": "Strategy session"};
 /* ---------- Helpers ---------- */
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
 var main=document.getElementById("main");
@@ -544,14 +507,14 @@ function home(){
     '</div>'+
   '</section>'+
   '<section class="section" id="work" aria-labelledby="h-work">'+
-    '<div class="sec-head"><div><p class="eyebrow">Selected work</p><h2 id="h-work">Six learning systems</h2></div>'+
+    '<div class="sec-head"><div><p class="eyebrow">Selected work</p><h2 id="h-work">Five learning systems</h2></div>'+
     '<p class="muted small">Each project page describes the learning problem, the design, the learner experience, and the supporting research.</p></div>'+
     '<ul class="tiles">'+tiles+'</ul>'+
   '</section>'+
   '<section class="section" id="about" aria-labelledby="h-about">'+
     '<div class="about">'+
       '<div><p class="eyebrow">About</p><h2 id="h-about">Background</h2>'+
-      '<p>My clinical background spans U.S. Air Force critical care and aerospace medicine and a doctorate in naturopathic medicine. That experience shapes the clinical systems in this portfolio, including the ABG and cardiovascular nursing work. I now teach anatomy and physiology at several California community colleges and design learning systems for students and faculty colleagues.</p>'+
+      '<p>My clinical background spans U.S. Air Force critical care and aerospace medicine and a doctorate in naturopathic medicine. That experience shapes the clinical side of the systems in this portfolio. I now teach anatomy and physiology at several California community colleges and design learning systems for students and faculty colleagues.</p>'+
       '<p>My work combines clinical expertise, learning science and instructional design. I start with the learning architecture and then build working prototypes so the design can be used and refined in real courses.</p>'+
       '</div>'+
       '<ul class="facts">'+
